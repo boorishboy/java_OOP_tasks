@@ -16,11 +16,11 @@ public class Animal implements Feedable {
     }
 
     @Override
-    public void feed_double(double foodWeight) throws Exception {
+    public void feed_double(double fw) throws Exception {
         if (weight <= 0) {
             System.out.println("The animal is dead ( ͡° ͜ʖ ͡°)");
         } else {
-            weight += foodWeight;
+            weight += fw;
         }
     }
 
