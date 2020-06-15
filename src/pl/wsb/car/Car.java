@@ -1,4 +1,4 @@
-package pl.wsb;
+package pl.wsb.car;
 
 public class Car {
     String producer;
@@ -17,5 +17,13 @@ public class Car {
 
     public void setPrice(double price) {
         this.price = price;
+    }
+
+    public void compareTo(Car car1, Car car2) {
+        if(car1.equals(car2)) {
+            System.out.println("cars are the same \n");
+        }else{
+            System.out.println("cars are different \n");
+        }
     }
 }

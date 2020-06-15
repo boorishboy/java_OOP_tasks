@@ -1,5 +1,5 @@
 package pl.wsb.human;
-import pl.wsb.Car;
+import pl.wsb.car.Car;
 import pl.wsb.animal.Animal;
 
 public class Human {
@@ -49,5 +49,15 @@ public class Human {
         }
 
         System.out.println("You're poor. Better get an electric scooter.");
+    }
+
+    @Override
+    public String toString() {
+        return "Human{" +
+                "name='" + name + '\'' +
+                ", car=" + car +
+                ", pet=" + pet +
+                ", salary=" + salary +
+                '}';
     }
 }

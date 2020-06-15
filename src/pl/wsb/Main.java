@@ -1,14 +1,16 @@
 package pl.wsb;
 
 import pl.wsb.animal.Animal;
+import pl.wsb.car.Car;
 import pl.wsb.human.Human;
 
 public class Main {
 
     public static void main(String[] args) throws Exception {
         Animal cat = new Animal("Cat", 5.0);
-        Car car = new Car("ford", "fiesta");
-        Human human = new Human("Wojtek", car, cat);
+        Car ford = new Car("ford", "fiesta");
+        Car fiat = new Car("fiat", "500");
+        Human human = new Human("Wojtek", ford, cat);
       //  cat.feed_double(4.0);
         System.out.println(cat.species);
         System.out.println(cat.weight);
@@ -17,5 +19,8 @@ public class Main {
         cat.walk();
         cat.walk();
         cat.walk();
+
+        ford.compareTo(ford,fiat);
+        System.out.println(cat);
     }
 }

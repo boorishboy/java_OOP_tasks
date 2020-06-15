@@ -24,6 +24,14 @@ public class Animal implements Feedable {
         }
     }
 
+    @Override
+    public String toString() {
+        return "Animal{" +
+                "species='" + species + '\'' +
+                ", weight=" + weight +
+                '}';
+    }
+
     public void walk() {
         if (weight > 2.0) {
             System.out.println("thank you very much for such a nice walk");
