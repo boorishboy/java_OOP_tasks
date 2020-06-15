@@ -4,7 +4,7 @@ import pl.wsb.animal.Animal;
 
 public class Human {
     String name;
-    Car car;
+    private Car car;
     Animal pet;
 
     public Double salary;
@@ -29,5 +29,25 @@ public class Human {
         System.out.println("Healthy Insurence and Tax Office got to know of salary change and there is no use to hide your real income");
 
         this.salary = salary;
+    }
+
+    public Car getCar() {
+        return car;
+    }
+
+    public void setCar(Car car) {
+        if(this.getSalary() > car.getPrice()) {
+            System.out.println("The car has been purchased with cash.");
+            this.car = car;
+            return;
+        }
+
+        if(this.getSalary() > car.getPrice() / 12) {
+            System.out.println("The car was purchased with a loan.");
+            this.car = car;
+            return;
+        }
+
+        System.out.println("You're poor. Better get an electric scooter.");
     }
 }
