@@ -1,7 +1,8 @@
 package pl.wsb;
 
 import pl.wsb.animal.Animal;
-import pl.wsb.car.Car;
+import pl.wsb.device.Car;
+import pl.wsb.device.Phone;
 import pl.wsb.human.Human;
 
 public class Main {
@@ -22,5 +23,9 @@ public class Main {
 
         ford.compareTo(ford,fiat);
         System.out.println(cat);
+
+        ford.turnOn();
+        Phone szajsung = new Phone("Samsung", "GALAXY ES 78", 2034);
+        szajsung.turnOn();
     }
 }

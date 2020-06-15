@@ -1,5 +1,5 @@
 package pl.wsb.human;
-import pl.wsb.car.Car;
+import pl.wsb.device.Car;
 import pl.wsb.animal.Animal;
 
 public class Human {
