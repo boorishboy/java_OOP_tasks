@@ -1,10 +1,13 @@
 package pl.wsb.device;
 
-public abstract class Device {
+import pl.wsb.interfaces.Soldable;
+
+public abstract class Device implements Soldable {
 
     String producer;
     String model;
     int yearOfProduction;
+    double price;
 
     void turnOn(){
     }

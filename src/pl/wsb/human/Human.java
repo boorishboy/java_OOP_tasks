@@ -1,18 +1,47 @@
 package pl.wsb.human;
 import pl.wsb.device.Car;
 import pl.wsb.animal.Animal;
+import pl.wsb.device.Phone;
 
 public class Human {
     String name;
     private Car car;
     Animal pet;
-
+    private Phone phone;
     public Double salary;
+    protected Double cash;
 
-    public Human(String name, Car car, Animal pet) {
+    public Human(String firstName, String lastName, double weight, Animal pet, Car vehicle, Phone mobile, double salary, Double cash) {
         this.name = name;
         this.car = car;
         this.pet = pet;
+        this.phone = mobile;
+        this.salary = salary;
+        this.cash = cash;
+    }
+
+    public Phone getMobile() {
+        return phone;
+    }
+
+    public void setMobile(Phone mobile) {
+        this.phone = mobile;
+    }
+
+    public Double getCash() {
+        return cash;
+    }
+
+    public void setCash(Double cash) {
+        this.cash = cash;
+    }
+
+    public void plusCash(Double cash) {
+        this.cash += cash;
+    }
+
+    public void minusCash(Double cash) {
+        this.cash += cash;
     }
 
     public Double getSalary() {
@@ -57,7 +86,17 @@ public class Human {
                 "name='" + name + '\'' +
                 ", car=" + car +
                 ", pet=" + pet +
+                ", phone=" + phone +
                 ", salary=" + salary +
+                ", cash=" + cash +
                 '}';
+    }
+
+    public Animal getPet() {
+        return pet;
+    }
+
+    public void setPet(Animal pet) {
+        this.pet = pet;
     }
 }
