@@ -1,5 +1,7 @@
 package pl.wsb.device;
 
+import pl.wsb.human.Human;
+
 public class Car extends Device {
     private double price;
 
@@ -45,5 +47,10 @@ public class Car extends Device {
     @Override
     public void turnOn() {
         System.out.println("car is turned on");
+    }
+
+    @Override
+    public boolean sell(Human buyer, Human seller) throws Exception {
+        return false;
     }
 }

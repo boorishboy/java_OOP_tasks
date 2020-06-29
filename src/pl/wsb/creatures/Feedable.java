@@ -1,4 +1,4 @@
-package pl.wsb.animal;
+package pl.wsb.creatures;
 
 public interface Feedable {
     Double feed() throws Exception;

@@ -1,8 +1,8 @@
-package pl.wsb.animal;
+package pl.wsb.creatures;
 import pl.wsb.human.Human;
 import pl.wsb.interfaces.Soldable;
 
-public class Animal implements Feedable, Soldable {
+public abstract class Animal implements Feedable, Soldable{
     public final String species;
     public Double weight;
     private Double price;

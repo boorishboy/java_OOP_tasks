@@ -1,6 +1,6 @@
 package pl.wsb.human;
 import pl.wsb.device.Car;
-import pl.wsb.animal.Animal;
+import pl.wsb.creatures.Animal;
 import pl.wsb.device.Phone;
 
 public class Human {
