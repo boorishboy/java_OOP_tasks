@@ -2,7 +2,7 @@ package pl.wsb.device;
 
 import pl.wsb.human.Human;
 
-public class Car extends Device {
+public abstract class Car extends Device {
     private double price;
 
 
@@ -53,4 +53,6 @@ public class Car extends Device {
     public boolean sell(Human buyer, Human seller) throws Exception {
         return false;
     }
+
+    public abstract void refuel();
 }

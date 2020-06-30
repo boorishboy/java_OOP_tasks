@@ -13,4 +13,5 @@ public abstract class Device implements Soldable {
     }
 
 
+    public abstract void sell() throws Exception;
 }

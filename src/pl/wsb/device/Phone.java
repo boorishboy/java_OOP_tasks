@@ -1,9 +1,14 @@
 package pl.wsb.device;
 
-import pl.wsb.device.Device;
 import pl.wsb.human.Human;
 
+import java.util.Arrays;
+
 public class Phone extends Device {
+
+    public final static String SERVER_ADDRESS = "https://abcd.xyz";
+    public final static String DEFAULT_VERSION = "8.16.4";
+    public final static String DEFAULT_PROTOCOL = "TCP/IP";
 
 
     public Phone(String producer, String model, int yearOfProduction, double price) {
@@ -47,6 +52,24 @@ public class Phone extends Device {
             System.out.println("Not enough cash");
             return false;
         }
+    }
+
+    public void installApp(String appName){
+        System.out.println("InstallApp method version 1 \nApp name: " + appName + "\n");
+    }
+
+    public void installApp(String appName, Double version) {
+        System.out.println("InstallApp method version 2 \nApp name " + appName + " was installed on the version: " + version + "\n");
+    }
+    public void installApp(String appName, Double version, String HttpAddress){
+        System.out.println("InstallApp method version 3 \nApp name: " + appName + "\nVersion of app: " + version + "\nHttp Address: " + HttpAddress + "\n");
+    }
+
+    public void installApp(String[] apps) {
+            System.out.println("InstallApp method version 4 \nApps: " + Arrays.toString(apps) + "\n");
+    }
+    public void installApp(String appName, String url){
+        System.out.println("InstallApp method version 5 \nApp name: " + appName + " \nApp URL: " + url + "\n");
     }
 
 }
