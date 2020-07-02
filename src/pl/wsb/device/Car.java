@@ -3,7 +3,7 @@ package pl.wsb.device;
 import pl.wsb.human.Human;
 
 public abstract class Car extends Device {
-    private double price;
+    public double price;
 
 
     public Car(String producer, String model, int yearOfProduction, double price) {

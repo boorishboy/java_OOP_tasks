@@ -4,21 +4,35 @@ import pl.wsb.creatures.Animal;
 import pl.wsb.device.Phone;
 
 public class Human {
+    String lastName;
     String name;
+    public Car[] garage;
     private Car car;
     Animal pet;
     private Phone phone;
     public Double salary;
     protected Double cash;
+    private static int DEFAULT_GARAGE_SIZE = 1;
 
-    public Human(String firstName, String lastName, double weight, Animal pet, Car vehicle, Phone mobile, double salary, Double cash) {
+    public Human(String name, String lastName, Animal pet, Car car, Phone phone, double salary, Double cash) {
         this.name = name;
-        this.car = car;
+        this.lastName = lastName;
         this.pet = pet;
-        this.phone = mobile;
+        this.phone = phone;
+        this.salary = salary;
+        this.cash = cash;
+        this.car = car;
+    }
+    public Human(String name, String lastName, Animal pet, Car[] garage, Phone phone, double salary, Double cash) {
+        this.name = name;
+        this.lastName = lastName;
+        this.pet = pet;
+        this.garage = garage;
+        this.phone = phone;
         this.salary = salary;
         this.cash = cash;
     }
+
 
     public Phone getMobile() {
         return phone;
@@ -99,4 +113,32 @@ public class Human {
     public void setPet(Animal pet) {
         this.pet = pet;
     }
+
+    public Double valueOfCars() {
+        Double value = 0.0;
+        for (Car car : garage) {
+            if (car != null) {
+                value += car.price;
+            }
+        }
+        return value;
+    }
+
+    public Car getFromGarage(Integer index) {
+        return this.garage[index];
+    }
+
+    public void setInGarage(Car car, Integer index) {
+        this.garage[index] = car;
+    }
+
+    public boolean isInGarage(Car newCar) {
+        for(Car car : garage){
+            if(car == newCar){
+                return true;
+            }
+        }
+        return false;
+    }
 }
+
