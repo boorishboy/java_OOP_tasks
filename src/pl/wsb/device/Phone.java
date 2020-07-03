@@ -40,6 +40,11 @@ public class Phone extends Device {
     }
 
     @Override
+    public void sell(Human buyer, Human seller, Double price) throws Exception {
+
+    }
+
+    @Override
     public boolean sell(Human buyer, Human seller) throws Exception {
         if (seller.getMobile().price<= buyer.getCash()) {
             buyer.minusCash(seller.getMobile().price);

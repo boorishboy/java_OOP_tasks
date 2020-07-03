@@ -45,14 +45,23 @@ public abstract class Car extends Device {
     }
 
     @Override
-    public void turnOn() {
-        System.out.println("car is turned on");
-    }
-
-    @Override
-    public boolean sell(Human buyer, Human seller) throws Exception {
-        return false;
+    public void sell(Human buyer, Human seller, Double price) throws Exception {
+        if(!seller.hasACar(this)){
+            throw new Exception("The seller doesn't have a car");
+        }
+        if(!buyer.hasAFreePlace()){
+            throw new Exception("The buyer doesn't have free place");
+        }
+        if(buyer.cash < price){
+            throw new Exception("you too poocr");
+        }
+        buyer.removeCar(this);
+        seller.addCar(this);
+        buyer.cash -= price;
+        seller.cash += price;
+        System.out.println("great, transaction is done");
     }
 
     public abstract void refuel();
+
 }

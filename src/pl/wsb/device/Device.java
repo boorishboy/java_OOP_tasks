@@ -1,5 +1,6 @@
 package pl.wsb.device;
 
+import pl.wsb.human.Human;
 import pl.wsb.interfaces.Soldable;
 
 public abstract class Device implements Soldable {
@@ -9,9 +10,11 @@ public abstract class Device implements Soldable {
     int yearOfProduction;
     double price;
 
-    void turnOn(){
+    public void turnOn(){
     }
 
 
     public abstract void sell() throws Exception;
+
+    public abstract void sell(Human buyer, Human seller, Double price) throws Exception;
 }

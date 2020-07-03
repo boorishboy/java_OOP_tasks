@@ -11,8 +11,8 @@ public class Human {
     Animal pet;
     private Phone phone;
     public Double salary;
-    protected Double cash;
-    private static int DEFAULT_GARAGE_SIZE = 1;
+    public Double cash;
+    private static int DEFAULT_GARAGE_SIZE = 5;
 
     public Human(String name, String lastName, Animal pet, Car car, Phone phone, double salary, Double cash) {
         this.name = name;
@@ -23,14 +23,9 @@ public class Human {
         this.cash = cash;
         this.car = car;
     }
-    public Human(String name, String lastName, Animal pet, Car[] garage, Phone phone, double salary, Double cash) {
-        this.name = name;
-        this.lastName = lastName;
-        this.pet = pet;
-        this.garage = garage;
-        this.phone = phone;
-        this.salary = salary;
-        this.cash = cash;
+
+    public Human() {
+        this.garage = new Car[DEFAULT_GARAGE_SIZE];
     }
 
 
@@ -124,8 +119,34 @@ public class Human {
         return value;
     }
 
+    public Car getCar(Integer index) {
+        return this.garage[index];
+    }
+
+    public void setCar(Car car, Integer index) {
+        this.garage[index] = car;
+    }
+
     public Car getFromGarage(Integer index) {
         return this.garage[index];
+    }
+
+    public boolean hasACar(Car newCar) {
+        for (Car car : garage) {
+            if (car == newCar) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public boolean hasAFreePlace() {
+        for (int i = 0; i < garage.length; i++) {
+            if (garage[i] == null) {
+                return true;
+            }
+        }
+        return false;
     }
 
     public void setInGarage(Car car, Integer index) {
@@ -139,6 +160,23 @@ public class Human {
             }
         }
         return false;
+    }
+
+    public void removeCar(Car car) {
+        for (int i = 0; i < garage.length; i++) {
+            if (garage[i] == car) {
+                garage[i] = null;
+            }
+        }
+    }
+
+    public void addCar(Car car) {
+        for (int i = 0; i < garage.length; i++) {
+            if (garage[i] == null) {
+                garage[i] = car;
+                break;
+            }
+        }
     }
 }
 
